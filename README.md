@@ -2,6 +2,9 @@
 
 Ten projekt pozwala rejestrować aktywność użytkowników, ustawiać status **urlop** oraz śledzić historię aktywności w pliku JSON. Plik jest współdzielony, więc zmiany wprowadzone przez jednego użytkownika mogą być pobrane przez innych po wykonaniu `git pull`.
 
+### UWAGA 
+Przed włączeniem programu wykonaj `git pull`
+
 ---
 
 ## Wymagania
