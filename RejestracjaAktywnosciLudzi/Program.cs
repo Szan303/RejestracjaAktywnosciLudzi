@@ -32,19 +32,22 @@ class Program
             Console.WriteLine("2. Wyświetl zarejestrowane aktywności");
             Console.WriteLine("3. Dodaj urlop");
             Console.WriteLine("4. Zakończ program");
-            string wybor = Console.ReadLine();
+            sbyte wybor = sbyte.Parse(Console.ReadLine());
             switch (wybor)
             {
-                case "1":
+                case 1:
                     RejestrujAktywnosc();
                     break;
-                case "2":
+                case 2:
                     WyswietlAktywnosci();
                     break;
-                case "3":
+                case 3:
                     UstawUrlop();
                     break;
-                case "4":
+                case 4:
+                    UsunAktywnosc();
+                    break;
+                case 0:
                     ZapiszDoPliku();
                     return;
                 default:
@@ -113,6 +116,25 @@ class Program
         aktywnosc.Add(new AktywnoscLudzi(nick, date));
         ZapiszDoPliku();
         Console.WriteLine("Aktywność zapisana!");
+        Thread.Sleep(1000);
+    }
+    public static void UsunAktywnosc()
+    {
+        Console.Clear();
+        Console.Write("Podaj nick do usunięcia: ");
+        string nick = Console.ReadLine();
+        var osoba = aktywnosc.FirstOrDefault(a => a.Nick.Equals(nick, StringComparison.OrdinalIgnoreCase));
+        if (osoba != null)
+        {
+            aktywnosc.Remove(osoba);
+            Console.WriteLine($"Usunięto aktywność użytkownika: {nick}");
+            ZapiszDoPliku();
+        }
+        else
+        {
+            Console.WriteLine("Nie znaleziono użytkownika o podanym nicku.");
+            return;
+        }
         Thread.Sleep(1000);
     }
     public static void WyswietlAktywnosci()
