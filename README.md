@@ -10,7 +10,7 @@ Przed włączeniem programu wykonaj `git pull`
 ## Wymagania
 
 - IDE: **Visual Studio** lub **JetBrains Rider**  
-- .NET zgodny z projektem (np. .NET 6 lub .NET 7)  
+- .NET 8 
 
 ---
 
