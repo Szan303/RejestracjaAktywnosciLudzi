@@ -1,5 +1,8 @@
-﻿using System.Text.Json;
+﻿// *******************************************************************************************
+// ************* Nie dotykać tego pliku, jeśli nie wiesz co robisz! **************************
+// *******************************************************************************************
 
+using System.Text.Json;
 class AktywnoscLudzi
 {
     public string Nick { get; set; }
@@ -14,13 +17,12 @@ class AktywnoscLudzi
         KoniecUrlopu = null;
     }
 }
-
 class Program
 {
     static List<AktywnoscLudzi> aktywnosc = new List<AktywnoscLudzi>();
     static void Main()
     {
-        OdczytajZPliku(); //wczytywanie z pliku przy starcie programu
+        OdczytajZPliku();
         while (true)
         {
 
@@ -43,11 +45,11 @@ class Program
                     UstawUrlop();
                     break;
                 case "4":
-                    ZapiszDoPliku(); // zapisywanie do pliku przy zamknięciu programu
+                    ZapiszDoPliku();
                     return;
                 default:
                     Console.WriteLine("Nieprawidłowy wybór. Spróbuj ponownie.");
-                    Thread.Sleep(1000); // chwilka, żeby użytkownik zobaczył komunikat
+                    Thread.Sleep(1000);
                     break;
             }
         }
@@ -111,16 +113,14 @@ class Program
         aktywnosc.Add(new AktywnoscLudzi(nick, date));
         ZapiszDoPliku();
         Console.WriteLine("Aktywność zapisana!");
-        Thread.Sleep(1000); // chwilka, żeby użytkownik zobaczył komunikat
-
-
+        Thread.Sleep(1000);
     }
     public static void WyswietlAktywnosci()
     {
         if (aktywnosc.Count == 0)
         {
             Console.WriteLine("Brak zarejestrowanych aktywności.");
-            Thread.Sleep(1000); // chwilka, żeby użytkownik zobaczył komunikat
+            Thread.Sleep(1000);
             return;
         }
         foreach (var a in aktywnosc)
