@@ -20,3 +20,7 @@ Przed włączeniem programu wykonaj `git pull`
 
 ```bash
 git clone <adres-repozytorium>
+
+```
+## Build
+Jeżeli ktoś potrafi może przez IDE zbudować projekt i w folderze bin powinien znaleźć się plik `.exe` też zadziała
