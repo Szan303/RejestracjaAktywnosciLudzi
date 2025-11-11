@@ -185,18 +185,33 @@ class Program
     }
     public static void ZapiszDoPliku()
     {
-        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "aktywnosc.json");
+        string path = GetJsonPath();
         string json = JsonSerializer.Serialize(aktywnosc, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(path, json);
     }
     public static void OdczytajZPliku()
     {
-        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "aktywnosc.json");
+        string path = GetJsonPath();
 
-        if (File.Exists(path))
+        if (!File.Exists(path))
         {
-            var json = File.ReadAllText("aktywnosc.json");
+            Console.WriteLine($"Plik JSON nie istnieje: {path}");
+            Environment.Exit(1); 
+        }
+        try
+        {
+            var json = File.ReadAllText(path);
             aktywnosc = JsonSerializer.Deserialize<List<AktywnoscLudzi>>(json);
+            if (aktywnosc == null)
+            {
+                Console.WriteLine("Nie udało się wczytać danych z JSON (pusty lub niepoprawny format).");
+                Environment.Exit(1);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Błąd podczas wczytywania JSON: " + ex.Message);
+            Environment.Exit(1);
         }
     }
     public static void UstawUrlop()
@@ -229,5 +244,16 @@ class Program
             Console.WriteLine("Nieprawidłowy format daty!");
         }
         Thread.Sleep(1500);
+    }
+    static string GetJsonPath()
+    {
+        string dir = Directory.GetCurrentDirectory();
+        
+        while (!File.Exists(Path.Combine(dir, "RejestracjaAktywnosciLudzi.csproj")) && dir != Directory.GetDirectoryRoot(dir))
+        {
+            dir = Directory.GetParent(dir).FullName;
+        }
+        
+        return Path.Combine(dir, "aktywnosc.json");
     }
 }
