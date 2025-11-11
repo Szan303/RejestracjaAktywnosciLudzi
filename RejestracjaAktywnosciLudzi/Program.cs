@@ -25,13 +25,16 @@ class Program
         OdczytajZPliku();
         while (true)
         {
-
             Console.Clear();
+            Console.WriteLine("=== Rejestracja Aktywności Ludzi ===");
             Console.WriteLine("Wybierz opcję:");
             Console.WriteLine("1. Zarejestruj aktywność");
             Console.WriteLine("2. Wyświetl zarejestrowane aktywności");
             Console.WriteLine("3. Dodaj urlop");
-            Console.WriteLine("4. Zakończ program");
+            Console.WriteLine("4. Usuń aktywność");
+            Console.WriteLine("0. Zakończ program");
+            Console.Write("Opcja: ");
+            
             sbyte wybor = sbyte.Parse(Console.ReadLine());
             switch (wybor)
             {
@@ -60,6 +63,7 @@ class Program
     public static void RejestrujAktywnosc()
     {
         Console.Clear();
+        Console.WriteLine("=== Dodaj Aktywność ===");
         Console.Write("Podaj nick: ");
         string nick = Console.ReadLine();
         DateTime date;
@@ -121,6 +125,7 @@ class Program
     public static void UsunAktywnosc()
     {
         Console.Clear();
+        Console.WriteLine("=== Usuwanie Aktywności ===");
         Console.Write("Podaj nick do usunięcia: ");
         string nick = Console.ReadLine();
         var osoba = aktywnosc.FirstOrDefault(a => a.Nick.Equals(nick, StringComparison.OrdinalIgnoreCase));
@@ -139,6 +144,8 @@ class Program
     }
     public static void WyswietlAktywnosci()
     {
+        Console.Clear();
+        Console.WriteLine("=== Zarejestrowane Aktywności ===");
         if (aktywnosc.Count == 0)
         {
             Console.WriteLine("Brak zarejestrowanych aktywności.");
@@ -155,8 +162,24 @@ class Program
             string status = a.NaUrlopie ? $" (Na urlopie do {a.KoniecUrlopu.Value.ToShortDateString()})" : "";
             TimeSpan roznica = DateTime.Now - a.Date;
             int dniTemu = (int)roznica.TotalDays;
-            Console.WriteLine($"Nick: {a.Nick}, Aktywny: {dniTemu} dni temu {status}");
+
+            Console.Write("Nick:");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write($" {a.Nick}");
+            Console.ResetColor();
+
+            Console.Write(", Aktywny: ");
+            Console.ForegroundColor = dniTemu > 7 ? ConsoleColor.Red : ConsoleColor.Green;
+            Console.Write(dniTemu);
+            Console.ResetColor();
+
+            Console.Write(" dni temu");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(status);
+            Console.ResetColor();
+
         }
+        Console.WriteLine("==================================");
         Console.WriteLine("\nNaciśnij dowolny klawisz, by wrócić do menu");
         Console.ReadKey();
     }
@@ -179,6 +202,7 @@ class Program
     public static void UstawUrlop()
     {
         Console.Clear();
+        Console.WriteLine("=== Dodawanie Urlopu ===");
         Console.Write("Podaj nick użytkownika: ");
         string nick = Console.ReadLine();
 
@@ -204,7 +228,6 @@ class Program
         {
             Console.WriteLine("Nieprawidłowy format daty!");
         }
-
         Thread.Sleep(1500);
     }
 }
