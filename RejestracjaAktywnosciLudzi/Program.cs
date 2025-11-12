@@ -34,7 +34,7 @@ class Program
             Console.WriteLine("4. Usuń aktywność");
             Console.WriteLine("0. Zakończ program");
             Console.Write("Opcja: ");
-            
+
             sbyte wybor = sbyte.Parse(Console.ReadLine());
             switch (wybor)
             {
@@ -196,7 +196,7 @@ class Program
         if (!File.Exists(path))
         {
             Console.WriteLine($"Plik JSON nie istnieje: {path}");
-            Environment.Exit(1); 
+            Environment.Exit(1);
         }
         try
         {
@@ -222,7 +222,7 @@ class Program
         string nick = Console.ReadLine();
 
         var osoba = aktywnosc.FirstOrDefault(a => a.Nick.Equals(nick, StringComparison.OrdinalIgnoreCase));
-        if (osoba == null) 
+        if (osoba == null)
         {
             Console.WriteLine("Nie znaleziono użytkownika o podanym nicku.");
             Thread.Sleep(1000);
@@ -248,12 +248,12 @@ class Program
     static string GetJsonPath()
     {
         string dir = Directory.GetCurrentDirectory();
-        
+
         while (!File.Exists(Path.Combine(dir, "RejestracjaAktywnosciLudzi.csproj")) && dir != Directory.GetDirectoryRoot(dir))
         {
             dir = Directory.GetParent(dir).FullName;
         }
-        
+
         return Path.Combine(dir, "aktywnosc.json");
     }
 }
