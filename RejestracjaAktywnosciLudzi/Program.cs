@@ -8,17 +8,21 @@ class AktywnoscLudzi
     public string Nick { get; set; }
     public DateTime Date { get; set; }
     public bool NaUrlopie { get; set; }
+    public DateTime? PoczatekUrlopu { get; set; }
     public DateTime? KoniecUrlopu { get; set; }
     public AktywnoscLudzi(string nick, DateTime date)
     {
         Nick = nick;
         Date = date;
         NaUrlopie = false;
+        PoczatekUrlopu = null;
         KoniecUrlopu = null;
     }
 }
 class Program
 {
+    public static string startInput;
+    public static string endInput;
     static List<AktywnoscLudzi> aktywnosc = new List<AktywnoscLudzi>();
     static void Main()
     {
@@ -60,12 +64,21 @@ class Program
             }
         }
     }
+    #region RejestracjaAktywnosci
     public static void RejestrujAktywnosc()
     {
         Console.Clear();
         Console.WriteLine("=== Dodaj Aktywność ===");
         Console.Write("Podaj nick: ");
         string nick = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(nick))
+        {
+            Console.WriteLine("Nick nie może być pusty!");
+            Thread.Sleep(1000);
+            return;
+        }
+
         DateTime date;
 
         Console.Write("Czy chcesz wpisać datę ręcznie? T / N : ");
@@ -97,12 +110,7 @@ class Program
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(nick))
-        {
-            Console.WriteLine("Nick nie może być pusty!");
-            Thread.Sleep(1000);
-            return;
-        }
+        
 
         var istniejacy = aktywnosc.FirstOrDefault(a => a.Nick.Equals(nick, StringComparison.OrdinalIgnoreCase));
         if (istniejacy != null)
@@ -142,6 +150,7 @@ class Program
         }
         Thread.Sleep(1000);
     }
+    #endregion
     public static void WyswietlAktywnosci()
     {
         Console.Clear();
@@ -152,14 +161,23 @@ class Program
             Thread.Sleep(1000);
             return;
         }
+        
         foreach (var a in aktywnosc)
         {
+            if (a.NaUrlopie != null && a.PoczatekUrlopu.HasValue && a.PoczatekUrlopu.Value <= DateTime.Now)
+            {
+                a.NaUrlopie = true;
+            }
             if (a.NaUrlopie && a.KoniecUrlopu.HasValue && a.KoniecUrlopu.Value < DateTime.Now)
             {
                 a.NaUrlopie = false;
+                a.PoczatekUrlopu = null;
                 a.KoniecUrlopu = null;
             }
-            string status = a.NaUrlopie ? $" (Na urlopie do {a.KoniecUrlopu.Value.ToShortDateString()})" : "";
+
+            string status = a.NaUrlopie ? 
+                $" (Na urlopie od {a.PoczatekUrlopu.Value.ToShortDateString()} do {a.KoniecUrlopu.Value.ToShortDateString()})" : "";
+
             TimeSpan roznica = DateTime.Now - a.Date;
             int dniTemu = (int)roznica.TotalDays;
 
@@ -183,6 +201,7 @@ class Program
         Console.WriteLine("\nNaciśnij dowolny klawisz, by wrócić do menu");
         Console.ReadKey();
     }
+    #region ZapisOdczyt
     public static void ZapiszDoPliku()
     {
         string path = GetJsonPath();
@@ -214,6 +233,7 @@ class Program
             Environment.Exit(1);
         }
     }
+    #endregion
     public static void UstawUrlop()
     {
         Console.Clear();
@@ -222,19 +242,28 @@ class Program
         string nick = Console.ReadLine();
 
         var osoba = aktywnosc.FirstOrDefault(a => a.Nick.Equals(nick, StringComparison.OrdinalIgnoreCase));
+
         if (osoba == null)
         {
             Console.WriteLine("Nie znaleziono użytkownika o podanym nicku.");
             Thread.Sleep(1000);
             return;
         }
+        Console.Write("Podaj datę rozpoczęcia urlopu (rrrr-mm-dd)");
+        startInput = Console.ReadLine();
+
+        if (DateTime.TryParse(startInput, out DateTime poczatekUrlopu))
+        {
+            osoba.PoczatekUrlopu = poczatekUrlopu;
+            
+        }
 
         Console.Write("Podaj datę zakończenia urlopu (rrrr-mm-dd): ");
-        string input = Console.ReadLine();
+        endInput = Console.ReadLine();
 
-        if (DateTime.TryParse(input, out DateTime koniecUrlopu))
+        if (DateTime.TryParse(endInput, out DateTime koniecUrlopu))
         {
-            osoba.NaUrlopie = true;
+            //osoba.NaUrlopie = true;
             osoba.KoniecUrlopu = koniecUrlopu;
             Console.WriteLine($"Użytkownik {nick} jest na urlopie do {koniecUrlopu}");
             ZapiszDoPliku();

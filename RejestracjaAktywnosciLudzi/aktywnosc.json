@@ -1,122 +1,142 @@
 [
   {
-    "Nick": "kocikblack",
-    "Date": "2025-11-11T22:13:54.9513363+01:00",
-    "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
     "Nick": "AlanHajto",
     "Date": "2025-11-11T22:14:19.3575866+01:00",
     "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "Miodekk",
-    "Date": "2025-11-11T22:14:29.3710178+01:00",
-    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
     "KoniecUrlopu": null
   },
   {
     "Nick": "Kostecky",
     "Date": "2025-11-09T00:00:00",
     "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "Arjio",
-    "Date": "2025-11-08T00:00:00",
-    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
     "KoniecUrlopu": null
   },
   {
     "Nick": "karbonara",
     "Date": "2025-11-04T00:00:00",
     "NaUrlopie": false,
+    "PoczatekUrlopu": null,
     "KoniecUrlopu": null
   },
   {
     "Nick": "1tusio1",
     "Date": "2025-11-10T00:00:00",
     "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "wTymon",
-    "Date": "2025-11-10T00:00:00",
-    "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "CreatViq",
-    "Date": "2025-10-29T00:00:00",
-    "NaUrlopie": true,
-    "KoniecUrlopu": "2025-11-14T00:00:00"
-  },
-  {
-    "Nick": "NapleteNatan",
-    "Date": "2025-10-26T00:00:00",
-    "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "F1lorka",
-    "Date": "2025-10-25T00:00:00",
-    "NaUrlopie": true,
-    "KoniecUrlopu": "2025-12-03T00:00:00"
-  },
-  {
-    "Nick": "Secundo",
-    "Date": "2025-11-11T22:41:18.8814461+01:00",
-    "NaUrlopie": true,
-    "KoniecUrlopu": "2025-11-20T00:00:00"
-  },
-  {
-    "Nick": "witzy",
-    "Date": "2025-10-29T00:00:00",
-    "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "Bodzio898",
-    "Date": "2025-11-12T18:51:13.3627705+01:00",
-    "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "GigaGarnuch",
-    "Date": "2025-11-12T18:51:23.6341909+01:00",
-    "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "Szan",
-    "Date": "2025-11-12T18:51:28.4512892+01:00",
-    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
     "KoniecUrlopu": null
   },
   {
     "Nick": "AdmSteel",
     "Date": "2025-11-12T18:51:36.5230922+01:00",
     "NaUrlopie": false,
-    "KoniecUrlopu": null
+    "PoczatekUrlopu": "2025-11-16T00:00:00",
+    "KoniecUrlopu": "2025-11-30T00:00:00"
   },
   {
     "Nick": "Alanoo",
     "Date": "2025-11-12T18:51:44.4762375+01:00",
     "NaUrlopie": false,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "Szaniu",
-    "Date": "2025-11-12T18:51:51.2105216+01:00",
-    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
     "KoniecUrlopu": null
   },
   {
     "Nick": "Goral",
     "Date": "2025-11-12T20:10:21.982916+01:00",
     "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "F1lorka",
+    "Date": "2025-11-12T21:40:47.1679095+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "napletenatan",
+    "Date": "2025-11-13T22:54:38.8545365+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "F1orka",
+    "Date": "2025-11-13T22:54:52.1210711+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "GigaGarnuch",
+    "Date": "2025-11-13T22:55:01.7401557+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "wTymon",
+    "Date": "2025-11-13T22:55:31.2465841+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "Secundo",
+    "Date": "2025-11-13T22:55:48.9819762+01:00",
+    "NaUrlopie": true,
+    "PoczatekUrlopu": "2025-11-05T00:00:00",
+    "KoniecUrlopu": "2025-11-20T00:00:00"
+  },
+  {
+    "Nick": "kocikblack",
+    "Date": "2025-11-14T00:00:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "PAPRYKARZ1",
+    "Date": "2025-11-15T14:52:37.5221694+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "Arjio",
+    "Date": "2025-11-15T20:03:53.751748+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "Bodzio898",
+    "Date": "2025-11-15T20:04:01.2828891+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "Szan",
+    "Date": "2025-11-15T20:04:05.9451474+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "CreatViq",
+    "Date": "2025-11-14T00:00:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "Zulusik",
+    "Date": "2025-11-15T22:26:27.5253435+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
     "KoniecUrlopu": null
   }
 ]
