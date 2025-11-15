@@ -101,7 +101,7 @@ class Program
         }
         else if (odpowiedz == "N" || string.IsNullOrWhiteSpace(odpowiedz))
         {
-            date = DateTime.Now;
+            date = DateTime.Now.Date;
         }
         else
         {
@@ -249,13 +249,13 @@ class Program
             Thread.Sleep(1000);
             return;
         }
+
         Console.Write("Podaj datę rozpoczęcia urlopu (rrrr-mm-dd)");
         startInput = Console.ReadLine();
 
         if (DateTime.TryParse(startInput, out DateTime poczatekUrlopu))
         {
             osoba.PoczatekUrlopu = poczatekUrlopu;
-            
         }
 
         Console.Write("Podaj datę zakończenia urlopu (rrrr-mm-dd): ");

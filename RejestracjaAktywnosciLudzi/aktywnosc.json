@@ -30,7 +30,7 @@
   {
     "Nick": "AdmSteel",
     "Date": "2025-11-12T18:51:36.5230922+01:00",
-    "NaUrlopie": false,
+    "NaUrlopie": true,
     "PoczatekUrlopu": "2025-11-16T00:00:00",
     "KoniecUrlopu": "2025-11-30T00:00:00"
   },
@@ -58,13 +58,6 @@
   {
     "Nick": "napletenatan",
     "Date": "2025-11-13T22:54:38.8545365+01:00",
-    "NaUrlopie": false,
-    "PoczatekUrlopu": null,
-    "KoniecUrlopu": null
-  },
-  {
-    "Nick": "F1orka",
-    "Date": "2025-11-13T22:54:52.1210711+01:00",
     "NaUrlopie": false,
     "PoczatekUrlopu": null,
     "KoniecUrlopu": null
@@ -135,6 +128,13 @@
   {
     "Nick": "Zulusik",
     "Date": "2025-11-15T22:26:27.5253435+01:00",
+    "NaUrlopie": false,
+    "PoczatekUrlopu": null,
+    "KoniecUrlopu": null
+  },
+  {
+    "Nick": "F1orka",
+    "Date": "2025-11-15T00:00:00",
     "NaUrlopie": false,
     "PoczatekUrlopu": null,
     "KoniecUrlopu": null
